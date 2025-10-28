@@ -1,0 +1,286 @@
+:root {
+  /* Green/Emerald Theme for a professional, calming look */
+  --bg: #0D1612;            /* Very Dark Forest Green (Subtle color tint for depth) */
+  --card: #1C2B24;          /* Darker Green-Gray for element depth */
+  --accent: #00B37F;        /* Vibrant Emerald Green */
+  --accent-light: #52DDAA;  /* Lighter Green for hovers/active states */
+  --muted: #A3B1A7;         /* Soft Gray-Green for secondary text */
+  --text-color: #E6EDE9;    /* Near-White for main text */
+  --glass: rgba(0, 179, 127, 0.08); /* Accent-tinted glass effect */
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  margin: 0;
+  /* Updated gradient using the new deep forest colors */
+  background: linear-gradient(180deg, var(--bg) 0%, #080D0A 100%); 
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px
+}
+
+/* --- HEADER --- */
+header {
+  position: sticky;
+  top: 12px;
+  z-index: 60
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  /* Glass effect using the new color scheme */
+  background: rgba(28, 43, 36, 0.8);
+  border: 1px solid rgba(0, 179, 127, 0.15); 
+  padding: 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Updated logo gradient using the new green accent */
+  background: linear-gradient(135deg, var(--accent), #006647); 
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+nav a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 600;
+  transition: color 0.2s, background 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent-light);
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.07); 
+  color: white
+}
+
+/* --- HERO --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: center;
+  padding: 48px 0
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin: 0 0 8px 0
+}
+
+.tag {
+  color: var(--accent-light); 
+  font-size: 18px;
+  margin-bottom: 18px
+}
+
+.cta {
+  display: flex;
+  gap: 10px
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.ghost {
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  background: transparent;
+  color: var(--text-color);
+}
+
+.btn.primary {
+  /* Updated primary button gradient with green accent */
+  background: linear-gradient(90deg, var(--accent), #006647); 
+  color: white
+}
+
+/* --- CARD --- */
+.card {
+  /* Card background uses the new richer card color */
+  background: var(--card); 
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 179, 127, 0.1); /* Subtle accent border */
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px
+}
+
+.meta .line {
+  font-size: 14px;
+  color: var(--muted)
+}
+
+/* --- SECTIONS --- */
+section {
+  padding: 64px 0
+}
+
+h2 {
+  font-size: 26px;
+  margin: 0 0 10px;
+  color: var(--text-color);
+}
+
+p.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.project {
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  transition: border-color 0.3s;
+}
+
+.project:hover {
+  border-color: rgba(0, 179, 127, 0.5); /* Stronger accent border on hover */
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin: 8px 8px 0 0;
+  font-weight: 600;
+  background: rgba(0, 179, 127, 0.1); /* Accent-tinted badge background */
+  color: var(--accent-light); /* Accent color for badge text */
+  font-size: 14px;
+}
+
+footer {
+  padding: 36px 0;
+  color: var(--muted);
+  text-align: center
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width:900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 18px
+  }
+  .grid-2 {
+    grid-template-columns: 1fr
+  }
+  .logo {
+    width: 44px;
+    height: 44px
+  }
+}
+
+/* --- ANIMATIONS --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s ease
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none
+}
+
+/* --- MODAL (Only color variables are changed) --- */
+#modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.8);
+  z-index: 80
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 760px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 179, 127, 0.3); /* Accent border for modal */
+}
+
+#closeModal {
+  float: right;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#modalContent {
+  clear: both;
+  color: var(--muted)
+}
